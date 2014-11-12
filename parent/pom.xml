@@ -40,13 +40,18 @@
 			<dependency>
 				<groupId>eu.salusproject</groupId>
 				<artifactId>security-privacy.authentication</artifactId>
-				<version>1.0.0</version>
+				<version>1.0.0-os</version>
 			</dependency>
 
 			<!-- For TripleStore persistency -->
 			<dependency>
 				<groupId>tr.com.srdc</groupId>
 				<artifactId>triplestore</artifactId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>tr.com.srdc.semantic-mdr</groupId>
+				<artifactId>semantic-mdr.configuration</artifactId>
 				<version>1.0.0</version>
 			</dependency>
 

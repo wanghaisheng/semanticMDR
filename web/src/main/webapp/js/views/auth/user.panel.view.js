@@ -13,9 +13,10 @@ define(['jquery', 'backbone', 'marionette', 'text!templates/auth/user.panel.html
 			this.model.clear();
 			$.ajax({
 				type : 'DELETE',
-				url : URL + 'auth'
+				url : URL + 'auth',
+                success : function () {}
 			});
-			$.cookie('SID', null);
+			$.removeCookie('SID');
 			this.options.app.vent.trigger('auth:logout');
 		}
 	});

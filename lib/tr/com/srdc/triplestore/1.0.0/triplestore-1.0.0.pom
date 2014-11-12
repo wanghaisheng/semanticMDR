@@ -10,13 +10,14 @@
     <name>Triple Store access through Apache Jena interface</name>
 	<description>Provides uniform access methods to the underlying triple store implementations. Currently Jena TDB and Vidtuoso are supported.</description>
 	
-	<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.target>1.7</maven.compiler.target>
-		<maven.compiler.source>1.7</maven.compiler.source>
-    </properties>
-	
     <dependencies>
+
+<dependency>
+			<groupId>tr.com.srdc.semantic-mdr</groupId>
+			<artifactId>semantic-mdr.configuration</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
 		<!-- Jena TDB Dependency -->
         <dependency>
             <groupId>org.apache.jena</groupId>
@@ -31,9 +32,9 @@
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>jena-larq</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
         </dependency>
-
+		
         <!-- Virtuoso Dependencies -->
         <dependency>
             <groupId>tr.com.srdc</groupId>
@@ -55,13 +56,28 @@
     </dependencies>
 	
 	<repositories>
-		
 		<repository>
 			<id>in-project-triplestore</id>
 			<name>In Project Repo for TripleStore</name>
 			<url>file://${project.basedir}/lib</url>
 		</repository>
-		
 	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-source-plugin</artifactId>
+			  <executions>
+				<execution>
+				  <id>attach-sources</id>
+				  <goals>
+					<goal>jar</goal>
+				  </goals>
+				</execution>
+			  </executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
